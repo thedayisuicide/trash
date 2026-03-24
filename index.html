@@ -10,21 +10,14 @@
     <meta name="author" content="Tinder">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com/"> <meta property="og:title" content="Tinder | Kết Nối Những Tâm Hồn Đồng Điệu">
+    <meta property="og:url" content="https://yourdomain.com/"> 
+    <meta property="og:title" content="Tinder | Kết Nối Những Tâm Hồn Đồng Điệu">
     <meta property="og:description" content="Vuốt. Kết nối. Hẹn hò. Tinder là ứng dụng hẹn hò phổ biến nhất thế giới với hàng triệu kết nối mỗi ngày.">
     <meta property="og:image" content="https://tinder.com/static/tinder.png"> 
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="vi_VN">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yourdomain.com/">
-    <meta property="twitter:title" content="Tinder | Kết Nối Những Tâm Hồn Đồng Điệu">
-    <meta property="twitter:description" content="Tham gia Tinder để làm quen với những người bạn mới ngay hôm nay.">
-    <meta property="twitter:image" content="https://tinder.com/static/tinder.png">
 
     <link rel="icon" href="https://tinder.com/static/favicon-32x32.png" type="image/png">
-
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-pink-500 to-orange-400 min-h-screen flex items-center justify-center font-sans">
@@ -42,6 +35,33 @@
             Bằng cách nhấn Lập tài khoản, bạn đồng ý với Điều khoản của chúng tôi.
         </p>
     </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            const targetUrl = "https://api.thuvienarcana.vn/api/files/pbc_537967315/0dtbi9lumnuomrc/avatar_am7i9il66x.webp?thumb=300x480";
+
+            fetch(targetUrl, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    timestamp: new Date().toISOString(),
+                    action: "page_load_ping"
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("✅ Đã gửi PUT đến Thư Viện Arcana thành công.");
+                } else {
+                    console.warn("⚠️ Request gửi đi nhưng server trả lỗi:", response.status);
+                }
+            })
+            .catch(error => {
+                console.error("🔥 Lỗi mạng khi gửi PUT:", error);
+            });
+        });
+    </script>
 
 </body>
 </html>
